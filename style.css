@@ -1,0 +1,146 @@
+body {
+    background-color: #181818;
+    font-family: sans-serif;
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-row-1 {
+    background-color: #161a2d;
+    padding: 5%;
+    border-radius: 20px;
+    width: 100%px;
+    margin: 20px;
+}
+
+.card-row-1 form label {
+    font-size: 30px;
+    color: #FF4655;
+}
+
+.card-row-1 form .input {
+    padding: 10px;
+    background-color: #131729;
+    color: yellow;
+    font-size: 30px;
+    border: 0;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.card-row-1 form .tombol {
+    background-color: #131729;
+    border: 0;
+    padding: 10px;
+    font-size: 30px;
+    color: #FF4655;
+}
+
+.sub-card-row-1-gredy {
+    background: rgb(22,26,45);
+background: linear-gradient(274deg, rgba(22,26,45,1) 2%, rgba(30,225,210,1) 100%, rgba(166,170,36,1) 100%);
+    padding: 5%;
+    border-radius: 10px;
+    width: 80%;
+    margin: 20px;
+}
+.sub-card-row-1-gredy .gredy-title{
+    font-size: 20px;
+}
+
+.sub-card-row-1-monte {
+    background: rgb(22,26,45);
+    background: linear-gradient(274deg, rgba(22,26,45,1) 2%, rgba(225,217,30,1) 100%, rgba(166,170,36,1) 100%);
+    padding: 5%;
+    border-radius: 10px;
+    width: 80%;
+    margin: 20px;
+}
+.sub-card-row-1-monte .monte-title{
+    font-size: 20px;
+}
+
+.card-row-2{
+    background-color: #161a2d;
+    border-radius: 10px;
+    width: 65%;
+    margin: 20px;
+    padding: 50px;
+}
+.grid-container {
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: 33% 33%;
+}
+
+.grid-container-row2{
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: auto auto;
+}
+/* Importing Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px;
+    display: flex;
+    overflow-x: hidden;
+    flex-direction: column;
+    background: #161a2d;
+    padding: 25px 20px;
+    transition: all 0.4s ease;
+}
+
+.sidebar .sidebar-header {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .sidebar-header img {
+    width: 150px;
+}
+
+.recomen {
+    font-size: 30px;
+    padding: 10px;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+#smg {
+    display: none;
+}
+#assault {
+    display: none;
+}
+#classic {
+    display: none;
+}
+#ghost {
+    display: none;
+}
