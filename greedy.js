@@ -23,7 +23,9 @@ function greedyBuyPrice(credit) {
     const result = {
         primary: null,
         secondary: null,
-        shield: null
+        shield: null,
+        totalharga: null,
+        totalpopu: null,
     };
     
     for (const item of buyMenu) {
@@ -31,12 +33,18 @@ function greedyBuyPrice(credit) {
             if (item.typ === "Primary" && !result.primary) {
                 credit -= item.price;
                 result.primary = item;
+                result.totalharga += item.price;
+                result.totalpopu += item.popu;
             } else if (item.typ === "Secondary" && !result.secondary) {
                 credit -= item.price;
                 result.secondary = item;
+                result.totalharga += item.price;
+                result.totalpopu += item.popu;
             } else if (item.typ === "Shield" && !result.shield) {
                 credit -= item.price;
                 result.shield = item;
+                result.totalharga += item.price;
+                result.totalpopu += item.popu;
             }
         }
     }
@@ -48,9 +56,12 @@ function greedyBuyPop(credit) {
     const result = {
         primary: null,
         secondary: null,
-        shield: null
+        shield: null,
+        totalharga: null,
+        totalpopu: null,
     };
-    buyMenu.sort((a, b) => b.popu - a.popu);
+    c = buyMenu;
+    c.sort((a, b) => b.popu - a.popu);
     let maxPopP = 0, maxPopSc = 0, maxPopSh = 0;
     for (const item of buyMenu) {
         if (credit >= item.price) {
@@ -58,14 +69,20 @@ function greedyBuyPop(credit) {
                 credit -= item.price;
                 result.primary = item;
                 maxPopP = item.popu;
+                result.totalharga += item.price;
+                result.totalpopu += item.popu;
             } else if (item.typ === "Secondary" && !result.secondary && item.popu > maxPopSc) {
                 credit -= item.price;
                 result.secondary = item;
                 maxPopSc = item.popu;
+                result.totalharga += item.price;
+                result.totalpopu += item.popu;
             } else if (item.typ === "Shield" && !result.shield && item.popu > maxPopSh) {
                 credit -= item.price;
                 result.shield = item;
                 maxPopSh = item.popu;
+                result.totalharga += item.price;
+                result.totalpopu += item.popu;
             }
         }
     }
@@ -75,26 +92,34 @@ function greedyBuyDens(credit) {
     const result = {
         primary: null,
         secondary: null,
-        shield: null
+        shield: null,
+        totalharga: null,
+        totalpopu: null,
     };
     let maxDensSc = 0;
     let maxDensSh = 0;
-
-    buyMenu.sort((a, b) => b.dens - a.dens);
+    c = buyMenu;
+    c.sort((a, b) => b.dens - a.dens);
 
     for (const item of buyMenu) {
         if (credit >= item.price) {
             if (item.typ === "Primary" &&!result.primary) {
                 credit -= item.price;
                 result.primary = item;
+                result.totalharga += item.price;
+                result.totalpopu += item.popu;
             } else if (item.typ === "Secondary" &&!result.secondary && item.dens > maxDensSc) {
                 credit -= item.price;
                 result.secondary = item;
                 maxDensSc = item.dens;
+                result.totalharga += item.price;
+                result.totalpopu += item.popu;
             } else if (item.typ === "Shield" &&!result.shield && item.dens > maxDensSh) {
                 credit -= item.price;
                 result.shield = item;
                 maxDensSh = item.dens;
+                result.totalharga += item.price;
+                result.totalpopu += item.popu;
             }
         }
     }

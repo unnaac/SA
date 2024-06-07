@@ -65,6 +65,18 @@ background: linear-gradient(274deg, rgba(22,26,45,1) 2%, rgba(30,225,210,1) 100%
     font-size: 20px;
 }
 
+.sub-card-row-1-optimal {
+    background: rgb(22,26,45);
+    background: linear-gradient(274deg, rgba(22,26,45,1) 2%, rgb(92, 185, 26) 100%, rgba(166,170,36,1) 100%);
+    padding: 5%;
+    border-radius: 10px;
+    width: 80%;
+    margin: 20px;
+}
+
+.sub-card-row-1-optimal .optimal-title{
+    font-size: 20px;
+}
 .card-row-2{
     background-color: #161a2d;
     border-radius: 10px;

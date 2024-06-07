@@ -21,7 +21,9 @@ function monteCarloBuy(credit, iterations = 100000) { // interations bisa digant
         primary: null,
         secondary: null,
         shield: null,
-        remainingCredit: credit
+        remainingCredit: credit,
+        totalharga: null,
+        totalpopu: null,
     };
 
     function evaluateCombination(combination, credit) {
@@ -29,19 +31,27 @@ function monteCarloBuy(credit, iterations = 100000) { // interations bisa digant
             primary: null,
             secondary: null,
             shield: null,
-            remainingCredit: credit
+            remainingCredit: credit,
+            totalharga: null,
+            totalpopu: null,
         };
         for (const item of combination) {
             if (credit >= item.price) {
                 if (item.typ === "Primary" && !result.primary) {
                     credit -= item.price;
                     result.primary = item;
+                    result.totalharga += item.price;
+                    result.totalpopu += item.popu;
                 } else if (item.typ === "Secondary" && !result.secondary) {
                     credit -= item.price;
                     result.secondary = item;
+                    result.totalharga += item.price;
+                    result.totalpopu += item.popu;
                 } else if (item.typ === "Shield" && !result.shield) {
                     credit -= item.price;
                     result.shield = item;
+                    result.totalharga += item.price;
+                    result.totalpopu += item.popu;
                 }
             }
         }
